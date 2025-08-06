@@ -1,0 +1,67 @@
+1. DEP (Data Execution Prevention)
+➡ Ngăn chặn mã độc thực thi trong vùng nhớ không cho phép.
+
+📌 Cách hoạt động của DEP
+Bình thường, bộ nhớ có thể có các vùng:
+
+Code segment: Chứa lệnh chương trình → có thể thực thi.
+
+Data segment (Stack, Heap): Chứa dữ liệu → không thể thực thi.
+
+DEP đánh dấu vùng nhớ như Stack, Heap là không thực thi (NX - Non-eXecutable).
+
+Nếu một chương trình cố gắng chạy Shellcode trên Stack hoặc Heap, hệ điều hành sẽ chặn lại và báo lỗi.
+
+📌 Ví dụ về DEP ngăn chặn Shellcode
+Hacker khai thác Buffer Overflow để ghi Shellcode vào Stack.
+
+Khi chương trình nhảy vào vùng nhớ chứa Shellcode, CPU sẽ chặn vì DEP không cho thực thi.
+
+Chương trình bị crash thay vì chạy mã độc.
+
+📌 Cách bypass (vượt qua) DEP
+🔴 DEP chỉ ngăn chặn mã thực thi trong vùng nhớ không có quyền thực thi. Hacker có thể:
+
+Return-Oriented Programming (ROP) – Gọi lại các hàm hệ thống để chạy mã độc.
+
+VirtualAlloc() hoặc VirtualProtect() – Thay đổi quyền bộ nhớ để thực thi Shellcode.
+
+JIT Spraying – Chèn mã vào vùng có thể thực thi (như trình duyệt web).
+
+2. ASLR (Address Space Layout Randomization)
+➡ Ngẫu nhiên hóa địa chỉ bộ nhớ để hacker không đoán được vị trí của mã cần khai thác.
+
+📌 Cách hoạt động của ASLR
+Trước đây, các chương trình luôn tải tại cùng một địa chỉ trong bộ nhớ.
+
+ASLR sẽ ngẫu nhiên hóa địa chỉ của các vùng quan trọng như:
+
+Executable (Code Segment)
+
+Stack & Heap
+
+Thư viện (DLLs / Shared Libraries)
+
+Nếu hacker không biết địa chỉ của Shellcode hoặc thư viện quan trọng, thì khai thác thất bại.
+
+📌 Ví dụ về ASLR bảo vệ chương trình
+Hacker tìm thấy lỗi Buffer Overflow và muốn ghi đè Return Address để nhảy vào Shellcode.
+
+Nhưng do ASLR, địa chỉ bộ nhớ bị thay đổi mỗi lần chạy chương trình.
+
+Hacker không thể đoán chính xác địa chỉ, tấn công thất bại.
+
+📌 Cách bypass (vượt qua) ASLR
+🔴 ASLR chỉ ngẫu nhiên hóa địa chỉ, hacker có thể:
+
+Memory Leak (Rò rỉ bộ nhớ) – Dùng lỗi Format String hoặc lỗi khác để đọc địa chỉ thực tế.
+
+Brute-force Attack – Thử nhiều địa chỉ khác nhau (hiệu quả nếu ASLR kém).
+
+Partial Overwrite – Chỉ ghi đè một phần địa chỉ để không bị ảnh hưởng bởi ASLR.
+
+📌 Tổng kết
+✅ DEP bảo vệ bằng cách ngăn thực thi mã trong vùng nhớ không cho phép.
+✅ ASLR bảo vệ bằng cách ngẫu nhiên hóa địa chỉ bộ nhớ để khó khai thác.
+✅ Hacker có thể bypass DEP bằng ROP hoặc thay đổi quyền bộ nhớ.
+✅ Hacker có thể bypass ASLR bằng Memory Leak hoặc đoán địa chỉ.
