@@ -26,6 +26,9 @@
         <a href="login.php" class="list-group-item list-group-item-action">SQL Injection, IDOR</a>
         <a href="xss.php" class="list-group-item list-group-item-action">Stored XSS</a>
         <a href="upload.php" class="list-group-item list-group-item-action">File Upload</a>
+        <a href="path_traversal/path.php" class="list-group-item list-group-item-action">Path Traversal</a>
+        <a href="XXE.php" class="list-group-item list-group-item-action">XXE Injection</a>
+        <a href="command.php" class="list-group-item list-group-item-action">Command Injection</a>
     </div>
 </div>
 

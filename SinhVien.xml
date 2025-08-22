@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sinhvien>
+    <sinhvien>
+        <MSV> AT190217 </MSV>
+        <name> Lê Văn Hà </name>
+        <email> halevan@gmail.com </email>
+        <que> Hà Nam </que>
+    </sinhvien>
+    <sinhvien>
+        <MSV> AT190242 </MSV>
+        <name> Nguyễn Việt Quang </name>
+        <email> vietquang792004@gmail.com </email>
+        <que> Ninh Bình </que>
+    </sinhvien>
+    <sinhvien>
+        <MSV> AT190241 </MSV>
+        <name> Bùi Hữu Phương </name>
+        <email> phuongbui@gmail.com </email>
+        <que> Bắc Bling </que>
+    </sinhvien>
+</sinhvien>
