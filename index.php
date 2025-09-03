@@ -29,6 +29,7 @@
         <a href="path_traversal/path.php" class="list-group-item list-group-item-action">Path Traversal</a>
         <a href="XXE.php" class="list-group-item list-group-item-action">XXE Injection</a>
         <a href="command.php" class="list-group-item list-group-item-action">Command Injection</a>
+        <a href="rfi.php" class="list-group-item list-group-item-action">Remote File Inclusion</a>
     </div>
 </div>
 

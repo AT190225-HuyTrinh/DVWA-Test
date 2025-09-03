@@ -10,7 +10,7 @@
        $data = simplexml_load_string($xml, "SimpleXMLElement", LIBXML_NOENT | LIBXML_DTDLOAD);
        /* đoạn code dòng 10 gây lỗi xml external entity vì có dùng 2 cờ gây lỗi là
         LIBXML_NOENT(substitute entity) thay thế tất cả entity trong xml
-        VD <!ENTITY test SYSTEM "file://http://localhost/DVWA/public_secret/secret.txt"
+        VD <!ENTITY test SYSTEM "file://http://localhost/DVWA/secret/secret.txt"
         <>&test;<>
         LIBXML_DTDLOAD(DTD: document type definition) là cờ cho phép tải, định nghĩa 1 document
         do đó 2 cờ này cho phép có thể định nghĩa document tạo thực thể ngoài */

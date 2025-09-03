@@ -6,12 +6,8 @@
         header("Location: login.php");
         exit();
     }
-
-    if (!isset($_GET['id'])) {
-        die("Thiếu tham số ID!");
-    }
-
-    $id = $_GET['id']; // đây là lỗi idor vì chỉ cần chỉnh sửa id vì dùng method get nên sẽ trả về kqua vậy chỉ cho xem id theo phiên đăng nhập
+    $id = $_GET['id']; 
+    // đây là lỗi idor vì chỉ cần chỉnh sửa id vì dùng method get nên sẽ trả về kqua vậy chỉ cho xem id theo phiên đăng nhập
 
     $sql = "SELECT * FROM users WHERE id = $id";
     $result = $conn->query($sql);

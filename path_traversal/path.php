@@ -41,6 +41,7 @@
     <script>
         function HienThi(){
             alert("Hãy tìm file robots.txt để dò tìm flag.txt");
+            
         }
     </script>
 </head>

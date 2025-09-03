@@ -1,18 +1,13 @@
 <?php
     $output = "";
     if(isset($_POST["domain"])){
-        $host = $_POST["domain"];
-        /*lỗi là do k ktra input xong dùng biên dịch shell dẫn đến thực thi command
-        do vậy có thể validate input cho phép ký tự hoa thg số chấm đuôi phải ít nhất 2 ký tự
-        hoặc dùng escapeshellarg($host) để thêm dấu '' vào đoạn input dẫn đến máy chỉ coi đó là 1 lệnh
-        và lệnh đó k thực thi đc do sai định dạng*/
-        /*if(!preg_match("/^([a-zA-Z0-9]+\.)+[a-zA-Z]{2,}$/", $host)){
+        $host = $_POST["domain"];  
+        if(!preg_match("/^([a-zA-Z0-9]+\.)+[a-zA-Z]{2,}$/", $host)){
             $output = "Domain không hợp lệ!!!";
         }
         else{
             $output = shell_exec("nslookup " . $host);
-        }*/
-        $output = shell_exec("nslookup " . $host);
+        }
     }
 ?>
 <!DOCTYPE html>
